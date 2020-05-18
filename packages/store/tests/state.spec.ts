@@ -109,6 +109,7 @@ describe('State', () => {
         name: 'foo',
         defaults: 0
       })
+      @Injectable()
       class FooState implements NgxsOnInit {
         ngxsOnInit() {
           listener.push('onInit');
@@ -129,6 +130,7 @@ describe('State', () => {
         name: 'foo',
         defaults: []
       })
+      @Injectable()
       class FooState implements NgxsOnInit {
         ngxsOnInit(ctx: StateContext<string[]>) {
           ctx.setState([...ctx.getState(), 'onInit']);
@@ -149,6 +151,7 @@ describe('State', () => {
         name: 'foo',
         defaults: []
       })
+      @Injectable()
       class FooState implements NgxsOnInit {
         ngxsOnInit(ctx: StateContext<string[]>) {
           ctx.setState([...ctx.getState(), 'onInit']);
@@ -176,6 +179,7 @@ describe('State', () => {
         name: 'eager',
         defaults: []
       })
+      @Injectable()
       class EagerState {
         @Action(UpdateState)
         updateState(ctx: StateContext<any[]>, action: UpdateState) {
@@ -187,18 +191,21 @@ describe('State', () => {
         name: 'foo',
         defaults: expectedStates.foo
       })
+      @Injectable()
       class FooState {}
 
       @State<string>({
         name: 'bar',
         defaults: expectedStates.bar
       })
+      @Injectable()
       class BarState {}
 
       @State<any>({
         name: 'qux',
         defaults: expectedStates.qux
       })
+      @Injectable()
       class QuxState {}
 
       TestBed.configureTestingModule({
@@ -216,6 +223,7 @@ describe('State', () => {
         name: 'foo',
         defaults: []
       })
+      @Injectable()
       class FooState implements NgxsOnInit {
         ngxsOnInit(ctx: StateContext<string[]>) {
           ctx.setState([...ctx.getState(), 'onInit']);

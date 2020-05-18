@@ -36,6 +36,7 @@ describe('ngxsOnChanges', () => {
       name: 'counter',
       defaults: 0
     })
+    @Injectable()
     class CounterState implements NgxsOnChanges {
       constructor(private apiCloud: OnlineCloudService) {}
 

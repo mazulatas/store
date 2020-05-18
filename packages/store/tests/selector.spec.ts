@@ -9,6 +9,7 @@ import { Selector } from '../src/decorators/selector/selector';
 import { NgxsConfig } from '../src/symbols';
 import { SelectorOptions } from '../src/decorators/selector-options';
 import { CONFIG_MESSAGES, VALIDATION_CODE } from '../src/configs/messages.config';
+import { Injectable } from '@angular/core';
 
 describe('Selector', () => {
   interface MyStateModel {
@@ -23,6 +24,7 @@ describe('Selector', () => {
       bar: 'World'
     }
   })
+  @Injectable()
   class MyState {
     @Selector()
     static foo(state: MyStateModel) {
@@ -37,6 +39,7 @@ describe('Selector', () => {
       bar: 'World'
     }
   })
+  @Injectable()
   class MyState2 {
     @Selector([MyState.foo])
     static foo(myState2: MyStateModel, myStateFoo: string) {
@@ -115,6 +118,7 @@ describe('Selector', () => {
           value: 0
         }
       })
+      @Injectable()
       class TestState {
         @Selector()
         static foo(state: any) {
@@ -148,6 +152,7 @@ describe('Selector', () => {
             bar: 'World'
           }
         })
+        @Injectable()
         class TestState {
           @Selector()
           static foo(state: MyStateModel) {
@@ -185,6 +190,7 @@ describe('Selector', () => {
             bar: 'World'
           }
         })
+        @Injectable()
         class TestState {
           @Selector()
           static foo(state: MyStateModel) {
@@ -229,6 +235,7 @@ describe('Selector', () => {
           bar: 'Bar1'
         }
       })
+      @Injectable()
       // tslint:disable-next-line: class-name
       class MyStateV4_1 {
         @Selector()
@@ -254,6 +261,7 @@ describe('Selector', () => {
           bar: 'Bar2'
         }
       })
+      @Injectable()
       // tslint:disable-next-line: class-name
       class MyStateV4_2 {
         @Selector()
@@ -324,6 +332,7 @@ describe('Selector', () => {
         injectContainerState: false,
         suppressErrors: false
       })
+      @Injectable()
       class MyStateV4 {
         @Selector()
         static foo(state: MyStateModel) {
@@ -410,6 +419,7 @@ describe('Selector', () => {
           bar: 'Bar'
         }
       })
+      @Injectable()
       class MyStateV4 {
         @Selector()
         static foo(state: MyStateModel) {
@@ -484,6 +494,7 @@ describe('Selector', () => {
           bar: 'Bar'
         }
       })
+      @Injectable()
       class MyStateV3 {
         @Selector()
         static foo(state: MyStateModel) {
@@ -650,6 +661,7 @@ describe('Selector', () => {
             bar: 'World'
           }
         })
+        @Injectable()
         class TestState {}
 
         TestBed.configureTestingModule({
@@ -684,6 +696,7 @@ describe('Selector', () => {
             bar: 'World'
           }
         })
+        @Injectable()
         class TestState {}
 
         TestBed.configureTestingModule({
@@ -714,6 +727,7 @@ describe('Selector', () => {
       name: 'tasks',
       defaults: [1, 2, 3, 4]
     })
+    @Injectable()
     class TasksState {
       @Selector()
       static reverse(state: number[]): number[] {
@@ -782,6 +796,7 @@ describe('Selector', () => {
       name: 'tasks',
       defaults: [1, 2, 3, 4]
     })
+    @Injectable()
     class NumberListState {
       @Selector()
       static reverse(state: number[]): number[] {
@@ -855,6 +870,7 @@ describe('Selector', () => {
         ids: []
       }
     })
+    @Injectable()
     class ContactsState {
       @Selector([ContactsState.ids, ContactsState.entityMap])
       static orderedContactNames(ids: number[], map: EntityMap<Contact>) {

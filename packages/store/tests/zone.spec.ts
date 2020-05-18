@@ -17,6 +17,7 @@ describe('zone', () => {
     name: 'counter',
     defaults: 0
   })
+  @Injectable()
   class CounterState {
     @Action(Increment)
     public increment({ setState, getState }: StateContext<number>): void {

@@ -28,6 +28,7 @@ describe('Development Mode', () => {
         name: 'counter',
         defaults: { count: 0 }
       })
+      @Injectable()
       class MyStore {
         @Action(Increment)
         increment({ getState, setState }: StateContext<StateModel>, { amount }: Increment) {
@@ -56,6 +57,7 @@ describe('Development Mode', () => {
         name: 'counter',
         defaults: { count: 0 }
       })
+      @Injectable()
       class MyStore {
         @Action(Increment)
         mutatingIncrement(
@@ -92,6 +94,7 @@ describe('Development Mode', () => {
         name: 'counter',
         defaults: { count: 0 }
       })
+      @Injectable()
       class MyStore {
         @Action(Increment)
         increment({ getState, setState }: StateContext<StateModel>, { amount }: Increment) {
@@ -120,6 +123,7 @@ describe('Development Mode', () => {
         name: 'counter',
         defaults: { count: 0 }
       })
+      @Injectable()
       class MyStore {
         @Action(InitState)
         init({ getState, setState }: StateContext<StateModel>) {
@@ -158,6 +162,7 @@ describe('Development Mode', () => {
         name: 'counter',
         defaults: { count: 0 }
       })
+      @Injectable()
       class MyStore {
         @Action(UpdateState)
         updateState({ getState, setState }: StateContext<StateModel>) {
@@ -200,6 +205,7 @@ describe('Development Mode', () => {
         name: 'counter',
         defaults: { count: 0 }
       })
+      @Injectable()
       class MyStore {
         @Action(Increment)
         mutatingIncrement(
@@ -240,6 +246,7 @@ describe('Development Mode', () => {
         name: 'counter',
         defaults: { count: 0 }
       })
+      @Injectable()
       class MyStore {
         @Action(Reset)
         reset({ setState }: StateContext<StateModel>) {
@@ -282,6 +289,7 @@ describe('Development Mode', () => {
         name: 'counter',
         defaults: { count: 0 }
       })
+      @Injectable()
       class MyStore {
         @Selector()
         static getCount(state: StateModel): number {
@@ -313,6 +321,7 @@ describe('Development Mode', () => {
         name: 'counter',
         defaults: { inner: { count: 0 } }
       })
+      @Injectable()
       class MyStore {
         @Selector()
         static getCounterModel(state: { inner: StateModel }): StateModel {
@@ -343,6 +352,7 @@ describe('Development Mode', () => {
         name: 'counter',
         defaults: { count: 0 }
       })
+      @Injectable()
       class MyStore {}
 
       TestBed.configureTestingModule({

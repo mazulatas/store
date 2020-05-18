@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { NgxsModule } from '../src/module';
 import { State } from '../src/decorators/state';
 import { Store } from '../src/store';
+import { Injectable } from '@angular/core';
 
 describe('StoreValidator', () => {
   describe('duplicate state name check', () => {
@@ -12,12 +13,14 @@ describe('StoreValidator', () => {
           name: 'duplicate',
           defaults: 'first'
         })
+        @Injectable()
         class MyOtherState {}
 
         @State<string>({
           name: 'duplicate',
           defaults: 'second'
         })
+        @Injectable()
         class MyDuplicateState {}
 
         TestBed.configureTestingModule({

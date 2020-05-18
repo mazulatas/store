@@ -24,6 +24,7 @@ import {
   WebSocketConnectionUpdated,
   WebSocketConnected
 } from '../';
+import { Injectable } from '@angular/core';
 
 type WebSocketMessage = string | Blob | ArrayBuffer | ArrayBufferView;
 
@@ -231,6 +232,7 @@ describe('NgxsWebsocketPlugin', () => {
       name: 'messages',
       defaults: []
     })
+    @Injectable()
     class MessagesState {
       @Action(AddMessage)
       addMessage(ctx: StateContext<Message[]>, { from, message }: AddMessage) {

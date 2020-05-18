@@ -148,5 +148,8 @@
   "schematics": {
     "@schematics/angular:component": {},
     "@schematics/angular:directive": {}
+  },
+  "cli": {
+    "analytics": false
   }
 }
